@@ -1,13 +1,11 @@
 
 # 🔐 Password Manager API
 
-REST API do bezpiecznego zarządzania hasłami. Aplikacja umożliwia przechowywanie, szyfrowanie, import/eksport danych, generowanie silnych haseł oraz wykonywanie operacji CRUD. Projekt stworzony w technologii **Spring Boot** z wykorzystaniem zasad **OOP**, wzorców projektowych i algorytmu **QuickSort**.
-
+Aplikacja webowa typu **REST API** do bezpiecznego przechowywania i zarządzania hasłami. Umożliwia operacje CRUD, szyfrowanie danych, generowanie bezpiecznych haseł oraz zapis danych do plików JSON i XML.
 ---
 
 ## 🧩 Funkcjonalności
-
-- ✅ Przechowywanie danych logowania (strona, login, hasło)
+- ✅ Przechowywanie danych logowania do momentu zamknięcia aplikacji (strona, login, hasło)
 - ✅ Szyfrowanie/odszyfrowywanie haseł (jeśli zaimplementowane)
 - ✅ Algorytm QuickSort do sortowania wpisów
 - ✅ Import/eksport haseł w formacie JSON i XML
@@ -15,7 +13,7 @@ REST API do bezpiecznego zarządzania hasłami. Aplikacja umożliwia przechowywa
 - ✅ REST API – pełen zestaw operacji CRUD
 - ✅ Dokumentacja kodu (Javadoc)
 - ✅ Struktura projektu oparta na Mavenie
-- ✅ Gotowość do wdrożenia lub rozwoju frontendu
+- ✅ Gotowość do wdrożenia lub rozwoju frontendu/ warstwy wizualnej
 
 ---
 
@@ -36,7 +34,7 @@ password-manager/
 │   │   │   │           ├── model/           # Modele danych (np. PasswordEntry)
 │   │   │   │           ├── repository/      # Repozytoria JPA (interfejsy do bazy danych)
 │   │   │   │           ├── service/         # Logika biznesowa (np. szyfrowanie, generowanie haseł)
-│   │   │   │           └── util/            # Klasy pomocnicze (np. en/dekryptory)
+│   │   │   │           └── utill/            # Klasy pomocnicze (np. en/dekryptory)
 │   │   │   └── resources/
 │   │   └── test/
 │   │       └── java/                        # Testy jednostkowe (JUnit 5)
@@ -53,7 +51,6 @@ password-manager/
 ```
 
 ---
-
 ## ⚙️ Wymagania techniczne
 
 - Java 17+
@@ -90,7 +87,6 @@ mvn spring-boot:run
 ```
 http://localhost:8080
 ```
-
 ---
 
 ## 📡 Endpointy REST API
@@ -109,33 +105,20 @@ http://localhost:8080
 | POST   | `/api/passwords/import/json?fileName=plik.json` | Import z JSON            |
 | POST   | `/api/passwords/import/xml?fileName=plik.xml`   | Import z XML             |
 
----
-
-## 🧪 Testy jednostkowe
-
-- Zrealizowane w JUnit 5 (jeśli dostępne).
-
-```powershell
-mvn test
-```
-
----
-
 ## 📚 Technologie i biblioteki
 
 - Spring Boot
 - Spring Data JPA
-- H2 / PostgreSQL / MySQL (dowolna baza)
+- H2 
 - Jackson (JSON)
 - JAXB (XML)
-- Lombok (opcjonalnie)
 - JUnit 5 (testy)
-
 ---
 
 ## 🧠 Autor
+aleksandra napierska
 
 Projekt stworzony jako aplikacja zaliczeniowa przedmiot .  
-Repozytorium: [github.com/twoj-login/twoje-repozytorium](https://github.com/java-classroom-wit/tzs-zaliczenie-italexgrl)
+Repozytorium: (https://github.com/italexgrl/password-manager)
 
 ---

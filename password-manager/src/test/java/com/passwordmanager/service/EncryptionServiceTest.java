@@ -16,7 +16,6 @@ class EncryptionServiceTest {
     @BeforeEach
     void setUp() {
         encryptionService = new EncryptionService();
-        // Używamy ReflectionTestUtils do wstrzykiwania wartości @Value w testach jednostkowych
         String TEST_SECRET_KEY = "mySuperSecretKey123";
         ReflectionTestUtils.setField(encryptionService, "secretKey", TEST_SECRET_KEY);
     }

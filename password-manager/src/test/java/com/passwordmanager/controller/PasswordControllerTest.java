@@ -79,7 +79,6 @@ class PasswordControllerTest {
         verify(passwordService, times(1)).sortPasswordsByWebsite(anyList());
     }
 
-
     @Test
     void testGetPasswordByIdFound() throws Exception {
         PasswordEntry p1 = new PasswordEntry(1L, "google.com", "user1", "pass1");

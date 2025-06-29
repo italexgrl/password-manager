@@ -206,7 +206,6 @@ class PasswordServiceTest {
         passwordService.exportPasswordsToJson("test_export.json");
 
         verify(fileStorageService, times(1)).writePasswordsToJson(anyList(), eq("test_export.json"));
-        // Sprawdź, czy hasło zostało odszyfrowane przed eksportem (sprawdzenie przekazanego argumentu)
         verify(encryptionService, times(1)).decrypt("encrypted_pass");
     }
 
@@ -238,9 +237,9 @@ class PasswordServiceTest {
         assertNotNull(result);
         assertEquals(1, result.size());
         assertEquals("import.com", result.get(0).getWebsite());
-        assertEquals("raw_imported_pass", result.get(0).getEncryptedPassword()); // Sprawdź, czy zwracany jest odszyfrowany
+        assertEquals("raw_imported_pass", result.get(0).getEncryptedPassword());
         verify(fileStorageService, times(1)).readPasswordsFromJson("import.json");
-        verify(encryptionService, times(1)).encrypt("raw_imported_pass"); // Sprawdź, czy hasło zostało zaszyfrowane
+        verify(encryptionService, times(1)).encrypt("raw_imported_pass");
         verify(passwordRepository, times(1)).save(any(PasswordEntry.class));
     }
 
