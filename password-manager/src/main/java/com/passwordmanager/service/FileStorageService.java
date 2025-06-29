@@ -29,7 +29,6 @@ public class FileStorageService {
     private final JAXBContext jaxbContext;
 
     public FileStorageService() {
-        // ...
         try {
             jaxbContext = JAXBContext.newInstance(PasswordListWrapper.class);
         } catch (JAXBException e) {

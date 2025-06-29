@@ -25,7 +25,6 @@ import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.
 
 /**
  * Testy integracyjne (warstwa kontrolera) dla {@link PasswordController}.
- * Używa MockMvc do symulacji żądań HTTP i Mockito do mockowania serwisu.
  */
 @WebMvcTest(PasswordController.class) // Testuje tylko warstwę Web, mockując inne zależności
 class PasswordControllerTest {

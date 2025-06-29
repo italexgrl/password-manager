@@ -39,7 +39,7 @@ class EncryptionServiceTest {
         String decryptedText = encryptionService.decrypt(encryptedText);
 
         assertNotNull(encryptedText);
-        assertEquals("", encryptedText); // Pusty string daje pusty zaszyfrowany AES/ECB z PKCS5Padding
+        assertEquals("", encryptedText);
         assertEquals(originalText, decryptedText);
     }
 
